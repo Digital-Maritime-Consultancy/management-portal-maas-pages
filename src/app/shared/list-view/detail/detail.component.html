@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div *ngIf="!noBacklink && !isForNew">
+      <button nbButton status="info" ghost (click)="cancel()">
+        <nb-icon icon="arrow-ios-back" pack="eva"></nb-icon> 
+        Back to {{entityTypeName}} list
+      </button>
+    </div>
+    <ngx-editable-form #editableForm
+      [menuType]="menuType" [isForNew]="isForNew" [title]="title" [iconName]="iconName"
+      [entityMrn]="entityMrn" [orgMrn]="orgMrn" [numberId]="numberId"
+      [instanceVersion]="instanceVersion" [isLoading]="isLoading" [isLoaded]="isLoaded"
+      [hasHeader]="true" [showButtons]="true" (onApprove)="approve()" (onReject)="delete()"
+      (onCancel)="cancel()" (onSubmit)="submit($event)" (onDelete)="delete()" (onRefresh)="refreshData()"
+    ></ngx-editable-form>
+    <!-- admin user form for approving org menu -->
+    <ngx-editable-form #supplementForm *ngIf="menuType === 'orgcandidate' && orgShortId"
+      [menuType]="'user'" [isForNew]="true" [orgShortId]="orgShortId" [defaultPermissions]="defaultPermissionForAdminUser"
+      [title]="'Administrator account of ' + title" [iconName]="'user'" [numberId]="numberId"
+      [entityMrn]="" [orgMrn]="entityMrn"
+      [instanceVersion]="instanceVersion" [isLoading]="isLoading" [isLoaded]="isLoaded"
+      [hasHeader]="true" [showButtons]="false" (onApprove)="approve()" (onReject)="delete()"
+      (onCancel)="cancel()" (onSubmit)="submit($event)" (onDelete)="delete()" (onRefresh)="refreshData()"
+    ></ngx-editable-form>
+  </div>
+</div>

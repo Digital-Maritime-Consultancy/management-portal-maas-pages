@@ -1,0 +1,34 @@
+<nb-card>
+  <nb-card-header>
+      {{ 'sr.about.title' | translate }}
+  </nb-card-header>
+  <nb-card-body>
+    <p> {{ 'sr.about.intro' | translate }} </p>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>
+    {{ 'sr.about.portal.title' | translate }}
+  </nb-card-header>
+  <nb-card-body>
+    <p> {{ 'sr.about.portal.description' | translate }} </p>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>
+    {{ 'sr.about.howto.title' | translate }}
+  </nb-card-header>
+  <nb-tabset>
+    <nb-tab tabTitle="{{'sr.about.howto.user.title' | translate}}">
+      <p>{{ 'sr.about.howto.user.description' | translate }}</p>
+    </nb-tab>
+    <nb-tab tabTitle="{{'sr.about.howto.orgAdmin.title' | translate}}">
+      <p>{{ 'sr.about.howto.orgAdmin.description' | translate }}</p>
+    </nb-tab>
+    <nb-tab tabTitle="{{'sr.about.howto.mirAdmin.title' | translate}}">
+      <p>{{ 'sr.about.howto.mirAdmin.description' | translate }}</p>
+    </nb-tab>
+  </nb-tabset>
+</nb-card>

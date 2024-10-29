@@ -1,0 +1,69 @@
+<div class="card-container">
+    <nb-card *ngIf="!submitted">
+        <nb-card-header>
+            {{ 'register.title' | translate }}{{environmentName}}
+        </nb-card-header>
+        <nb-card-body>
+            <div *ngIf="!agreed">
+                <div class="rows">
+                    <div class="col">
+                        <strong>{{ 'register.termsOfUse.title' | translate }}</strong>
+                    </div>
+                </div>
+                <div class="rows">
+                    <div class="col">
+                        {{ termsOfUse }}
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="agreed">
+                <div class="rows">
+                    <div class="col">
+                        <ngx-editable-form #editableForm
+                        [isForRegistration]="true"
+                        [menuType]="menuType" [isForNew]="isForNew" [title]="title" [iconName]="iconName"
+                        [entityMrn]="entityMrn" [orgMrn]="orgMrn" [numberId]="numberId" 
+                        [instanceVersion]="instanceVersion" [isLoading]="isLoading" [isLoaded]="isLoaded"
+                        [hasHeader]="true" [showButtons]="true" (onApprove)="approve()" (onReject)="delete()"
+                        (onCancel)="dismiss()" (onSubmit)="submit($event)" (onDelete)="delete()" (onRefresh)="refreshData()"
+                        ></ngx-editable-form>
+                    </div>
+                </div>
+            </div>
+        </nb-card-body>
+        <nb-card-footer>
+            <div *ngIf="!agreed">
+                <div class="buttons-row">
+                    <button nbButton status="success" (click)="agree()">
+                        {{ 'register.button.agree' | translate }}
+                    </button>
+                    <button nbButton status="danger" (click)="dismiss()">
+                        {{ 'register.button.disagree' | translate }}
+                    </button>
+                </div>
+            </div>
+        </nb-card-footer>
+    </nb-card>
+    
+    <nb-card *ngIf="submitted">
+        <nb-card-header>
+            {{ 'register.submitted.title' | translate }}
+        </nb-card-header>
+        <nb-card-body>
+            <div class="rows">
+                <div class="col">
+                    <h5 class="text-center">
+                        {{ 'register.submitted.content' | translate }}
+                    </h5>
+                </div>
+            </div>
+        </nb-card-body>
+        <nb-card-footer>
+            <div class="buttons-row">
+                <button nbButton status="danger" (click)="dismiss()">
+                    {{ 'register.button.close' | translate }}
+                </button>
+            </div>
+        </nb-card-footer>
+    </nb-card>
+</div>

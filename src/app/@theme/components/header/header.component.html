@@ -1,0 +1,24 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo" href="#" (click)="navigatePersonalInfo()">{{ 'landing.title.serviceName' | translate }}</a>
+    <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
+      <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
+    </nb-select>
+  </div>
+</div>
+
+<div class="header-container">
+  <nb-select [selected]="currentLang" (selectedChange)="changeLang($event)" status="primary">
+    <nb-option *ngFor="let lang of langs" [value]="lang.code"> {{ lang.name }}</nb-option>
+  </nb-select>
+  <nb-actions size="small">
+    <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
+      <nb-user [name]="userName" (click)="navigatePersonalInfo()">
+      </nb-user>
+    </nb-action>
+  </nb-actions>
+  <a href="{{logoutUrl}}">{{ 'header.logout' | translate }}</a>
+</div>

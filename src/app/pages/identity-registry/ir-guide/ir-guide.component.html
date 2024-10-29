@@ -1,0 +1,38 @@
+<nb-card>
+  <nb-card-header>
+      {{ 'ir.about.title' | translate }}
+  </nb-card-header>
+  <nb-card-body>
+    <p> {{ 'ir.about.intro' | translate }} </p>
+    <p> {{ 'ir.about.firstFunction' | translate }} </p>
+    <p> {{ 'ir.about.secondFunction' | translate }} </p>
+    <p> {{ 'ir.about.thirdFunction' | translate }} </p>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>
+    {{ 'ir.about.portal.title' | translate }}
+  </nb-card-header>
+  <nb-card-body>
+    <p> {{ 'ir.about.portal.description' | translate }} </p>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>
+    {{ 'ir.about.howto.title' | translate }}
+  </nb-card-header>
+  <nb-tabset>
+    <nb-tab tabTitle="{{'ir.about.howto.user.title' | translate}}">
+      <p>{{ 'ir.about.howto.user.description' | translate }}</p>
+    </nb-tab>
+    <nb-tab tabTitle="{{'ir.about.howto.orgAdmin.title' | translate}}">
+      <p>{{ 'ir.about.howto.orgAdmin.description' | translate }}</p>
+    </nb-tab>
+    <nb-tab tabTitle="{{'ir.about.howto.mirAdmin.title' | translate}}">
+      <p>{{ 'ir.about.howto.mirAdmin.description' | translate }}</p>
+    </nb-tab>
+  </nb-tabset>
+</nb-card>
+
