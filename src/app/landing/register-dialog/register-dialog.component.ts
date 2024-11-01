@@ -15,14 +15,12 @@
  */
 
 import { addLangs, loadLang } from './../../util/translateHelper';
-import { environment } from './../../../environments/environment.test';
 import { NotifierService } from 'angular-notifier';
 import { Organization } from './../../backend-api/identity-registry/model/organization';
 import { OrganizationControllerService } from './../../backend-api/identity-registry/api/organizationController.service';
 import { AppConfig } from './../../app.config';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
-import { ColumnForResource } from '../../shared/models/columnForMenu';
 import { TranslateService } from '@ngx-translate/core';
 
 /**
